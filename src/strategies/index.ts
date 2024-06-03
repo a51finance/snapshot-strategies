@@ -92,6 +92,7 @@ import * as theGraphDelegation from './the-graph-delegation';
 import * as theGraphIndexing from './the-graph-indexing';
 import * as whitelist from './whitelist';
 import * as whitelistWeighted from './whitelist-weighted';
+import * as whitelistWeightedJson from './whitelist-weighted-json';
 import * as tokenlon from './tokenlon';
 import * as pobHash from './pob-hash';
 import * as erc1155BalanceOf from './erc1155-balance-of';
@@ -208,6 +209,7 @@ import * as digitalaxMonaStakersMatic from './digitalax-mona-stakers-matic';
 import * as digitalaxLPStakersMatic from './digitalax-lp-stakers-matic';
 import * as galaxyNftWithScore from './galaxy-nft-with-score';
 import * as galxeLoyaltyPoints from './galxe-loyalty-points';
+import * as galxeStaking from './galxe-staking';
 import * as gatenetTotalStaked from './gatenet-total-staked';
 import * as vesper from './vesper';
 import * as thales from './thales';
@@ -355,6 +357,7 @@ import * as starlayVeBalanceOfLockerId from './starlay-ve-balance-of-locker-id';
 import * as winrStaking from './winr-staking';
 import * as spaceid from './spaceid';
 import * as delegateRegistryV2 from './delegate-registry-v2';
+import * as splitDelegation from './split-delegation';
 import * as hatsProtocolSingleVotePerOrg from './hats-protocol-single-vote-per-org';
 import * as karmaDiscordRoles from './karma-discord-roles';
 import * as seedifyHoldStakingFarming from './seedify-cumulative-voting-power-hodl-staking-farming';
@@ -416,6 +419,7 @@ import * as voltVotingPower from './volt-voting-power';
 import * as xdaiStakersAndHolders from './xdai-stakers-and-holders';
 import * as minimeBalanceVsSupplyWeighted from './minime-balance-vs-supply-weighted';
 import * as vestingBalanceOf from './vesting-balance-of';
+import * as stakingBalanceOfV2 from './staking-balance-of-v2';
 import * as poktNetworkPDA from './pokt-network-pda';
 import * as givethBalancesSupplyWeighted from './giveth-balances-supply-weighted';
 import * as givethGnosisBalanceSupplyWeightedV3 from './giveth-gnosis-balance-supply-weighted-v3';
@@ -423,6 +427,8 @@ import * as stakeMineLiquidHelios from './stake-mine-liquid-helios';
 import * as a51Farming from './a51-farming';
 import * as a51VaultBalance from './a51-vault-balance';
 import * as quickswapv3 from './quickswap-v3';
+import * as balanceOfWithBazaarBatchAuctionLinearVestingPower from './balance-of-with-bazaar-batch-auction-linear-vesting-power';
+import * as stakingBalanceOfV1 from './staking-balance-of-v1';
 
 const strategies = {
   'giveth-balances-supply-weighted': givethBalancesSupplyWeighted,
@@ -542,6 +548,7 @@ const strategies = {
   'the-graph-indexing': theGraphIndexing,
   whitelist,
   'whitelist-weighted': whitelistWeighted,
+  'whitelist-weighted-json': whitelistWeightedJson,
   tokenlon,
   'pob-hash': pobHash,
   'comp-like-votes': compLikeVotes,
@@ -646,6 +653,7 @@ const strategies = {
   'digitalax-mona-quickswap': digitalaxMonaQuickswap,
   'galaxy-nft-with-score': galaxyNftWithScore,
   'galxe-loyalty-points': galxeLoyaltyPoints,
+  'galxe-staking': galxeStaking,
   'gatenet-total-staked': gatenetTotalStaked,
   vesper,
   thales,
@@ -788,6 +796,7 @@ const strategies = {
   'winr-staking': winrStaking,
   spaceid,
   'delegate-registry-v2': delegateRegistryV2,
+  'split-delegation': splitDelegation,
   'hats-protocol-single-vote-per-org': hatsProtocolSingleVotePerOrg,
   'karma-discord-roles': karmaDiscordRoles,
   'seedify-cumulative-voting-power-hodl-staking-farming':
@@ -855,7 +864,11 @@ const strategies = {
   'pokt-network-pda': poktNetworkPDA,
   'a51-farming': a51Farming,
   'a51-vault-balance': a51VaultBalance,
-  'quickswap-v3': quickswapv3
+  'quickswap-v3': quickswapv3,
+  'balance-of-with-bazaar-batch-auction-linear-vesting-power':
+    balanceOfWithBazaarBatchAuctionLinearVestingPower,
+  'staking-balance-of-v1': stakingBalanceOfV1,
+  'staking-balance-of-v2': stakingBalanceOfV2,
 };
 
 Object.keys(strategies).forEach(function (strategyName) {
